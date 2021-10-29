@@ -1,0 +1,37 @@
+{
+  "component_header": {
+    "number": "S_1",
+    "name": "header"
+  },
+
+  "component_banner": {
+    "number": "S_1",
+    "name": "banner"
+  },
+
+  "component_videobox": {
+    "number": "S_1",
+    "name": "videobox"
+  },
+
+  "component_gallery": {
+    "number": "S_1",
+    "name": "gallery"
+  },
+
+
+  "component_footer": {
+    "number": "S_1",
+    "name": "footer"
+  },
+
+  "component_popup": {
+    "number": "S_1",
+    "name": "popup"
+  },
+
+  "component_form": {
+    "number": "S_1",
+    "name": "form"
+  }
+}

@@ -1,0 +1,119 @@
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: #161616;
+
+    .nav__wrap {
+        display: flex;
+        padding: 10px 0;
+        z-index: 999;
+    }
+
+    .nav__toggle {
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+    }
+
+    .close,
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    .hamburger, .close {
+        width: 100%;
+    }
+
+    .nav__menu {
+        @extend %ul-reset;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 1rem;
+        gap: 1rem;
+    }
+
+    li {
+        display: none;
+        list-style: none;
+    }
+
+    li:first-child {
+        display: block;
+        max-width: 94px;
+        max-height: 62px;
+        margin-right: auto;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .nav__menu a {
+        font-family: $font-secondary;
+        font-size: 16px;
+        color: $header-color;
+        text-decoration: none;
+        transition: all .25s ease-in-out;
+
+        &:hover {
+            color: $header-color-hov;
+        }
+    }
+
+    #nav__checkbox:checked ~ ul.nav__menu li {
+        display: block;
+    }
+
+    #nav__checkbox:checked ~ label.nav__toggle .hamburger {
+        display: none;
+    }
+
+    #nav__checkbox:checked ~ label.nav__toggle .close {
+        display: block;
+    }
+
+    @include respond-from(sm) {
+        .nav__toggle {
+            display: none;
+        }
+
+        .nav__menu {
+            flex-direction: row;
+        }
+
+        .nav__menu li {
+            display: block;
+        }
+    }
+
+    @include respond-from(md) {
+        .nav__menu {
+            gap: 3rem;
+        }
+
+        .nav__menu a {
+            font-size: 20px;
+        }
+    }
+
+}
+
+.is-scroll {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    transition: all .35s ease-in-out;
+}
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+    z-index: 999;
+}

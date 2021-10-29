@@ -1,0 +1,468 @@
+body {
+    background-color: $primary-fill;
+    font-weight: $font-weight;
+    color: $primary-text;
+    transition: all .35s ease-in-out;
+}
+
+@font-face {
+    font-family: 'SchoolBook';
+    font-style: normal;
+    font-weight: 100;
+    src: local('SchoolBook'), local('SchoolBook'),
+    url('/static/fonts/School Book New.rtf') format('rtf'),
+    url('/static/fonts/School Book New.ttf') format('truetype');
+}
+
+html {
+
+    @include respond-from(to-sm) {
+        font-size: $font-size-xs;
+    }
+
+    font-size: $font-size;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h1 {
+    font-size: $font-size-h1;
+    font-weight: 500;
+    color: $primary-title;
+    text-align: center;
+
+    @include respond-from(sm) {
+        font-size: $font-size-h1-sm;
+        line-height: 36px;
+    }
+
+    @include respond-from(lg) {
+        font-size: $font-size-h1-lg;
+        line-height: 56px;
+    }
+}
+
+h2 {
+    font-size: $font-size-h2;
+    color: $primary-title;
+    text-align: center;
+
+    &.is-animated {
+        &:after {
+            opacity: 1;
+            animation-name: fadeInLeft;
+        }
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 3px;
+        margin: 10px auto;
+        background: $primary-title-decor;
+        border-radius: 2px;
+        opacity: 0;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+    }
+
+    @include respond-from(sm) {
+        font-size: $font-size-h2-sm;
+
+        &:after {
+            width: 130px;
+            height: 4px;
+            margin: 20px auto;
+        }
+    }
+
+    @include respond-from(lg) {
+        font-size: $font-size-h2-lg;
+    }
+}
+
+h3,
+.__cl-c-h3___ {
+    font-size: $font-size-h3;
+
+    @include respond-from(sm) {
+        font-size: $font-size-h3-sm;
+    }
+
+    @include respond-from(lg) {
+        font-size: $font-size-h3-lg;
+    }
+}
+
+p {
+    line-height: 1.8;
+}
+
+.w-center {
+    max-width: $page-width;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 $page-horizontal-gap;
+
+    @include respond-from(sm-md) {
+        padding: 0 $page-horizontal-gap-sm;
+    }
+
+    @include respond-from(md-xl) {
+        padding: 0 $page-horizontal-gap-md;
+    }
+}
+
+.w-page-section {
+    & {
+        padding: 40px 0;
+    }
+
+    &--no-bttm {
+        padding: 40px 0 0;
+    }
+
+    &--fill {
+        background: $secondary-fill;
+    }
+
+    &--comments {
+        background: $comments-fill;
+    }
+
+    @include respond-from(sm) {
+        & {
+            padding: 65px 0;
+        }
+
+        &--no-bttm {
+            padding: 65px 0 0;
+        }
+
+    }
+
+
+    @include respond-from(lg) {
+        & {
+            padding: 80px 0;
+        }
+
+        &--no-bttm {
+            padding: 80px 0 0;
+        }
+
+        &--fill {
+            h1 {
+                margin-top: -15px;
+            }
+        }
+
+    }
+}
+
+//gap
+
+.w-gap {
+    &___ {
+        margin-top: 40px;
+    }
+}
+
+.w-gap-sm {
+    margin-top: 100px;
+
+    @include respond-from(md) {
+        margin-top: 140px;
+    }
+}
+
+.w-gap-md {
+    margin-top: 50px;
+
+    @include respond-from(md) {
+        margin-top: 100px;
+    }
+
+    @include respond-from(lg) {
+        margin-top: 200px;
+    }
+}
+
+.w-gap-lg {
+    margin-top: 25px;
+
+    @include respond-from(sm) {
+        margin-top: 30px;
+    }
+
+    @include respond-from(md) {
+        margin-top: 40px;
+    }
+}
+
+.w-gap-xl {
+    margin-top: 25px;
+
+    @include respond-from(sm) {
+        margin-top: 35px;
+    }
+
+    @include respond-from(md) {
+        margin-top: 50px;
+    }
+}
+
+.decorated-title {
+    position: relative;
+    margin: 0 0 15px;
+    font-family: $font-secondary;
+    font-size: 20px;
+    color: #DE8159;
+    text-align: center;
+
+    @include respond-from(sm) {
+        font-size: 26px;
+
+    }
+
+    @include respond-from(md) {
+        font-size: 32px;
+
+    }
+
+    @include respond-from(lg) {
+        font-size: 40px;
+    }
+
+    @include respond-from(xlg) {
+        &:before {
+            content: "";
+            position: absolute;
+            top: 14%;
+            left: 0;
+            width: 533px;
+            height: 48px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='533' height='48' viewBox='0 0 533 48' fill='none'%3E%3Crect y='25' width='2' height='531.919' transform='rotate(-90 0 25)' fill='%23DE8159'/%3E%3Crect x='531.919' y='48' width='48' height='1.08114' transform='rotate(-90 531.919 48)' fill='%23DE8159'/%3E%3C/svg%3E");
+            background-size: cover;
+            transition: left .55s ease-in-out;
+        }
+    }
+}
+
+.decorated-title-second {
+    @include respond-from(lg) {
+        &:after {
+            content: "";
+            position: absolute;
+            top: -60px;
+            right: 0;
+            width: 320px;
+            height: 220px;
+            background-image: url("/static/img/content/decor.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+    }
+
+}
+
+.decorated-title-third {
+    @include respond-from(lg) {
+        &:before {
+            display: none;
+        }
+    }
+
+}
+
+.decorated-subtitle {
+    max-width: 440px;
+    margin: 0 auto 15px;
+    text-align: center;
+    @include respond-from(md) {
+        margin: 0 auto 34px;
+    }
+}
+
+.card {
+    margin-top: 50px;
+
+    &__wrap {
+        width: 100%;
+        max-width: 520px;
+        margin: 0 auto 50px;
+    }
+
+    &__image {
+        width: 100%;
+        max-width: 520px;
+        max-height: 370px;
+        margin: 0 auto;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 16px;
+        }
+    }
+
+    &__second-image {
+        max-width: 534px;
+        max-height: 426px;
+    }
+
+    &__text-title {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-family: $font-secondary;
+        font-size: 20px;
+        color: #DE8159;
+    }
+
+    &__text-price {
+        margin: 10px 0 20px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    @include respond-from(md) {
+        margin-top: 100px;
+
+        &__wrap {
+            margin: 0 auto 100px;
+        }
+
+
+        &__image {
+            margin: 0;
+        }
+
+    }
+    @include respond-from(lg) {
+
+        &__wrap {
+            display: flex;
+            justify-content: space-between;
+            max-width: 100%;
+        }
+
+
+        &__text-title {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            max-width: 640px;
+        }
+
+        &__second-text {
+
+        }
+
+    }
+
+    @include respond-from(xlg) {
+        &__wrapper {
+            max-width: 1040px;
+        }
+
+        &__second-text {
+            max-width: 810px;
+        }
+    }
+
+}
+
+.btn {
+    @extend %bttn-reset;
+    padding: 7px 62px;
+    background: #DE8159;
+    border-radius: 50px;
+    font-size: 20px;
+
+    &:hover {
+        background: #E4703E;
+
+    }
+}
+
+.image-cards {
+    margin-top: 50px;
+    padding-bottom: 40px;
+
+    &__card {
+        max-width: 382px;
+        margin: 0 auto;
+
+    }
+
+    &__txt {
+        text-align: center;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        max-height: 477px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 16px;
+        }
+    }
+
+    @include respond-from(sm) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond-from(md) {
+        margin-top: 100px;
+    }
+
+    @include respond-from(lg) {
+        grid-gap: 30px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    @include respond-from(xlg) {
+        &__txt {
+            margin-top: 30px;
+
+        }
+    }
+}
+
+.msg-wrap {
+    position: fixed;
+    bottom: 0;
+    left: calc(50% - 100px);
+    width: 200px;
+    height: 64px;
+    z-index: 9999;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+
+    .msg {
+        padding: 20px;
+        transform: translate(0px, 0px) !important;
+    }
+}

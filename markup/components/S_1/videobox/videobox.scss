@@ -1,0 +1,59 @@
+.videobox {
+    margin: 0 auto;
+
+    &__video-box {
+        max-width: 520px;
+        margin: 0 auto 40px;
+        overflow: hidden;
+    }
+
+    &__video {
+        video {
+            width: 100%;
+        }
+    }
+
+    &__text {
+        margin-top: 10px;
+    }
+
+    &__text-title {
+        font-family: $font-secondary;
+        font-size: 18px;
+        color: #DE8159;
+
+    }
+
+    @include respond-from(lg) {
+        &__wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        &__video-box {
+            max-width: 360px;
+        }
+
+        &__video video {
+            height: 100%;
+            max-height: 200px;
+        }
+    }
+
+    @include respond-from(xlg) {
+        &__wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        &__video-box {
+            max-width: 520px;
+        }
+
+        &__video video {
+            width: auto;
+            height: 294px;
+            max-height: 294px;
+        }
+    }
+}

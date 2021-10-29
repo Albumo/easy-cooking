@@ -1,0 +1,16 @@
+.gallery {
+    &__wrap {
+
+    }
+
+    &__img {
+        display: inline-block;
+        min-height: 100%;
+
+        @include support(object-fit, cover) {
+            width: 100%;
+            object-fit: cover;
+        }
+
+    }
+}

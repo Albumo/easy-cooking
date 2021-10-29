@@ -1,0 +1,9 @@
+mixin gallery()
+
+    .gallery
+        .gallery__wrap
+            picture
+                source.gallery__img(media="(min-width: 800px)" srcset="static/img/content/galleryDesc.png")
+                source.gallery__img(media="(min-width: 768px)" srcset="static/img/content/gallery768.png")
+                source.gallery__img(media="(min-width: 600px)" srcset="static/img/content/gallery600.png")
+                img.gallery__img(src="static/img/content/gallery320.png" alt="")
