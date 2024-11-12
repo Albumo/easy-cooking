@@ -1,6 +1,6 @@
 node_modules
 dev
-builds_all
+
 markup/pages/*
 
 .tmpTemplater

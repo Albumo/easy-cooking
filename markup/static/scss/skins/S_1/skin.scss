@@ -45,7 +45,6 @@ h1 {
         line-height: 56px;
     }
 }
-
 h2 {
     font-size: $font-size-h2;
     color: $primary-title;
@@ -85,24 +84,10 @@ h2 {
         font-size: $font-size-h2-lg;
     }
 }
-
 h3,
-.__cl-c-h3___ {
-    font-size: $font-size-h3;
-
-    @include respond-from(sm) {
-        font-size: $font-size-h3-sm;
-    }
-
-    @include respond-from(lg) {
-        font-size: $font-size-h3-lg;
-    }
-}
-
 p {
     line-height: 1.8;
 }
-
 .w-center {
     max-width: $page-width;
     margin-right: auto;
@@ -168,9 +153,7 @@ p {
 //gap
 
 .w-gap {
-    &___ {
-        margin-top: 40px;
-    }
+    margin-top: 20px;
 }
 
 .w-gap-sm {
@@ -309,7 +292,6 @@ p {
 
         img {
             width: 100%;
-            margin-bottom: 20px;
             border-radius: 16px;
         }
     }
@@ -365,10 +347,6 @@ p {
             flex-direction: column;
             justify-content: space-between;
             max-width: 640px;
-        }
-
-        &__second-text {
-
         }
 
     }
@@ -447,22 +425,5 @@ p {
             margin-top: 30px;
 
         }
-    }
-}
-
-.msg-wrap {
-    position: fixed;
-    bottom: 0;
-    left: calc(50% - 100px);
-    width: 200px;
-    height: 64px;
-    z-index: 9999;
-    overflow: hidden;
-    border-radius: 10px 10px 0 0;
-    text-align: center;
-
-    .msg {
-        padding: 20px;
-        transform: translate(0px, 0px) !important;
     }
 }

@@ -35,20 +35,19 @@
         margin-bottom: 20px;
     }
 
+    @include respond-from(sm) {
+
+        &__item-list_menu {
+            display: flex;
+            gap: 0 14px !important;
+        }
+    }
     @include respond-from(md) {
         padding: 40px 0 60px;
 
         &__wrap {
             display: flex;
             justify-content: space-between;
-        }
-
-        &__item-title {
-            margin-bottom: 35px;
-        }
-
-        &__item-list li {
-            margin-bottom: 30px;
         }
 
         &__item-logo {
